@@ -43,6 +43,11 @@ function App() {
           ? <Spinner />
           : <MovieList movies={movies} />
       }
+      {
+        isLoadingCandies
+          ? <Spinner />
+          : <CandyList candies={candies} />
+      }
     </div>
   );
 }

@@ -7,3 +7,11 @@ export async function getMovies() {
 
   return response.body;
 }
+
+export async function getCandies() {
+  const response = await client
+    .from('candies_table')
+    .select('*');
+  
+  return response.body;
+}
