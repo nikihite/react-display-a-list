@@ -1,9 +1,9 @@
 import { client } from './client';
 
-export default function getCandies() {
-  return (
-    <div>
+export async function getMovies() {
+  const response = await client
+    .from('movies_table')
+    .select('*');
 
-    </div>
-  );
+  return response.body;
 }
