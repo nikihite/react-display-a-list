@@ -2,14 +2,17 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import Spinner from './Spinner';
 import MovieList from './MovieList';
-import { getMovies } from './services/Fetch-utils';
+import CandyList from './CandyList';
+import { getMovies, getCandies } from './services/Fetch-utils';
 // import your arrays here
 
 
 function App() {
 
   const [movies, setMovies] = useState([]);
+  const [candies, setCandies] = useState([]);
   const [isLoadingMovies, setIsLoadingMovies] = useState(false);
+  const [isLoadingCandies, setIsLoadingCandies] = useState(false);
 
   async function fetchMoviesData() {
     setIsLoadingMovies(true);
@@ -21,7 +24,18 @@ function App() {
   useEffect(() => {
     fetchMoviesData();
   }, []);
-    
+
+  async function fetchCandiesData() {
+    setIsLoadingCandies(true);
+    const data = await getCandies();
+    setIsLoadingCandies(false);
+    setCandies(data);
+  }
+
+  useEffect(() => {
+    fetchCandiesData();
+  }, []);
+
   return (
     <div className="App">
       {
