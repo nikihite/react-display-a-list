@@ -11,10 +11,26 @@
   text-align: center;
 }
 
-img {
+.candies-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.movie-item img {
   width: 200px;
   height: 300px;
   margin: 10px;
+}
+
+.candy-item img {
+  width: 200px;
+  margin: 0px;
+}
+
+.candy-item h1 {
+  margin: 0px;
 }
 
 h1 {
@@ -27,4 +43,17 @@ h1 {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   width: 250px;
   margin: 10px;
+}
+
+.candy-item {
+  background-color: black;
+  color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 250px;
+  height: 300px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
