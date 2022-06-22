@@ -15,3 +15,19 @@ export async function getCandies() {
   
   return response.body;
 }
+
+export async function getPopcorns() {
+  const response = await client
+    .from('popcorn_table')
+    .select('*');
+  
+  return response.body;
+}
+
+export async function getDrinks() {
+  const response = await client
+    .from('drinks_table')
+    .select('*');
+  
+  return response.body;
+}

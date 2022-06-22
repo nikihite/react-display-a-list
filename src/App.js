@@ -3,7 +3,9 @@ import './App.css';
 import Spinner from './Spinner';
 import MovieList from './MovieList';
 import CandyList from './CandyList';
-import { getMovies, getCandies } from './services/Fetch-utils';
+import PopcornList from './PopcornList';
+import DrinkList from './DrinkList';
+import { getMovies, getCandies, getPopcorns, getDrinks } from './services/Fetch-utils';
 // import your arrays here
 
 
@@ -11,8 +13,12 @@ function App() {
 
   const [movies, setMovies] = useState([]);
   const [candies, setCandies] = useState([]);
+  const [popcorns, setPopcorns] = useState([]);
+  const [drinks, setDrinks] = useState([]);
   const [isLoadingMovies, setIsLoadingMovies] = useState(false);
   const [isLoadingCandies, setIsLoadingCandies] = useState(false);
+  const [isLoadingPopcorns, setIsLoadingPopcorns] = useState(false);
+  const [isLoadingDrinks, setIsLoadingDrinks] = useState(false);
 
   async function fetchMoviesData() {
     setIsLoadingMovies(true);
@@ -36,6 +42,28 @@ function App() {
     fetchCandiesData();
   }, []);
 
+  async function fetchPopcornsData() {
+    setIsLoadingPopcorns(true);
+    const data = await getPopcorns();
+    setIsLoadingPopcorns(false);
+    setPopcorns(data);
+  }
+
+  useEffect(() => {
+    fetchPopcornsData();
+  }, []);
+
+  async function fetchDrinksData() {
+    setIsLoadingDrinks(true);
+    const data = await getDrinks();
+    setIsLoadingDrinks(false);
+    setDrinks(data);
+  }
+
+  useEffect(() => {
+    fetchDrinksData();
+  }, []);
+
   return (
     <div className="App">
       {
@@ -47,6 +75,16 @@ function App() {
         isLoadingCandies
           ? <Spinner />
           : <CandyList candies={candies} />
+      }
+      {
+        isLoadingPopcorns
+          ? <Spinner />
+          : <PopcornList popcorns={popcorns} />
+      }
+      {
+        isLoadingDrinks
+          ? <Spinner />
+          : <DrinkList drinks={drinks} />
       }
     </div>
   );
