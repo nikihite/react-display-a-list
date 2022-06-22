@@ -1,3 +1,8 @@
+.App {
+  background-color: maroon;
+  height: max-content;
+}
+
 .movies-list {
   display: flex;
   flex-direction: row;
@@ -8,6 +13,8 @@
 
 img {
   width: 200px;
+  height: 300px;
+  margin: 10px;
 }
 
 h1 {
@@ -19,4 +26,5 @@ h1 {
   color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   width: 250px;
+  margin: 10px;
 }
