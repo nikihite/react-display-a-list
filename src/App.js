@@ -66,21 +66,26 @@ function App() {
 
   return (
     <div className="App">
+      <h1 className='header'>Pick A Movie</h1>
       {
         isLoadingMovies
           ? <Spinner />
           : <MovieList movies={movies} />
       }
+      <h1 className='header'>Grab A Snack</h1>
+      <h3>candy</h3>
       {
         isLoadingCandies
           ? <Spinner />
           : <CandyList candies={candies} />
       }
+      <h3>popcorn</h3>
       {
         isLoadingPopcorns
           ? <Spinner />
           : <PopcornList popcorns={popcorns} />
       }
+      <h3>drinks</h3>
       {
         isLoadingDrinks
           ? <Spinner />

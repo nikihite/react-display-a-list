@@ -18,6 +18,22 @@
   text-align: center;
 }
 
+.popcorn-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+.drinks-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
 .movie-item img {
   width: 200px;
   height: 300px;
@@ -29,12 +45,21 @@
   margin: 0px;
 }
 
+.drink-item img {
+  width: 200px;
+}
+
+.popcorn-item img {
+  width: 200px;
+}
+
 .candy-item h1 {
   margin: 0px;
 }
 
 h1 {
   font-size: 20px;
+  text-align: center;
 }
 
 .movie-item {
@@ -56,4 +81,47 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.popcorn-item {
+  background-color: black;
+  color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 250px;
+  margin: 10px;
+  height: 420px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.drink-item {
+  background-color: black;
+  color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 250px;
+  margin: 10px;
+  height: 400px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.drink-item p {
+  margin: 2px;
+}
+
+.header {
+  font-size: 40px;
+  background-color: wheat;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+h3 {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.228);
 }
